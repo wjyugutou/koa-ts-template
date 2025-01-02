@@ -1,0 +1,32 @@
+{
+  "name": "sms",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "main": "src/app.ts",
+  "scripts": {
+    "clear": "ts-node ./src/app.ts",
+    "tsnode": "ts-node --project ./tsconfig.json ./src/app.ts",
+    "dev": "set NODE_ENV=dev&& nodemon",
+    "build": "set NODE_ENV=prod&& nodemon"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "koa": "^2.15.3",
+    "koa-body": "^6.0.1",
+    "koa-router": "^13.0.1",
+    "log4js": "^6.9.1"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.12.1",
+    "@types/koa": "^2.15.0",
+    "@types/koa-router": "^7.4.8",
+    "@types/node": "^22.10.2",
+    "eslint": "^9.17.0",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
