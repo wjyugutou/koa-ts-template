@@ -6,7 +6,7 @@ import Router from 'koa-router'
 import testRouter from './test'
 
 const router = new Router({
-  prefix: '/api',
+  prefix: '',
 })
 
 router.use('/test', testRouter.routes(), testRouter.allowedMethods())
