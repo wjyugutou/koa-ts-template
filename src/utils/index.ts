@@ -1,5 +1,7 @@
 import type { Context } from 'node:vm'
 import os from 'node:os'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 // import jwt from 'jsonwebtoken'
 
 // import { JWT } from '../config/constant'
@@ -49,3 +51,8 @@ export function getClientIpAddress(ctx: Context) {
 // export function generatorToken(userId: number) {
 //   return jwt.sign({ userId }, JWT.secret, { expiresIn: JWT.expires })
 // }
+
+// 获取dirname
+export function getDirname(url: string) {
+  return path.dirname(fileURLToPath(url))
+}

@@ -13,7 +13,7 @@ router.get(['/:id', '/'], async (ctx) => {
   }
   else {
     ctx.body = {
-      content: `test get success, id: ${params.id}`,
+      content: `test get success`,
     }
   }
 })
@@ -30,11 +30,11 @@ router.post('/', async (ctx) => {
 })
 
 router.post('/file', async (ctx) => {
-  const buffer = readFileSync(path.resolve('../assets/卸货数据导入模板.xlsx'))
+  const buffer = readFileSync(path.resolve('src/static/卸货数据导入模板.xlsx'))
   ctx.set('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
   const fileName = encodeURIComponent('卸货数据导入模板.xlsx') // 你可以根据需要动态生成文件名
-  ctx.set('Content-Disposition', fileName)
 
+  ctx.set('Content-Disposition', fileName)
   ctx.body = buffer
 })
 

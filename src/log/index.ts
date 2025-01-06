@@ -1,6 +1,6 @@
 import type Koa from 'koa'
 import path from 'node:path'
-import { getClientIpAddress } from '@/utils/index.js'
+import { getClientIpAddress, getDirname } from '@/utils/index.js'
 import log4js from 'log4js'
 
 log4js.configure({
@@ -8,7 +8,7 @@ log4js.configure({
   appenders: {
     everything: {
       type: 'dateFile',
-      filename: path.resolve('./all/all.log'),
+      filename: path.join(getDirname(import.meta.url), './all/all.log'),
       pattern: 'yyyy-MM-dd', // 日期格式，每天一个文件
       compress: false, // 是否压缩旧日志文件
       numBackups: 30, // 保留最近 7 天的日志
