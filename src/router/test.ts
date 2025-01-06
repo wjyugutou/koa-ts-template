@@ -30,7 +30,7 @@ router.post('/', async (ctx) => {
 })
 
 router.post('/file', async (ctx) => {
-  const buffer = readFileSync(path.resolve(__dirname, '../assets/卸货数据导入模板.xlsx'))
+  const buffer = readFileSync(path.resolve('../assets/卸货数据导入模板.xlsx'))
   ctx.set('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
   const fileName = encodeURIComponent('卸货数据导入模板.xlsx') // 你可以根据需要动态生成文件名
   ctx.set('Content-Disposition', fileName)

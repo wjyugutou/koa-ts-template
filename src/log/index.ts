@@ -1,14 +1,14 @@
 import type Koa from 'koa'
 import path from 'node:path'
-import log4js, { type DateFileAppender } from 'log4js'
-import { getClientIpAddress } from '../utils/index'
+import { getClientIpAddress } from '@/utils/index.js'
+import log4js from 'log4js'
 
 log4js.configure({
   pm2: true,
   appenders: {
     everything: {
       type: 'dateFile',
-      filename: path.join(__dirname, 'all', 'all.log'),
+      filename: path.resolve('./all/all.log'),
       pattern: 'yyyy-MM-dd', // 日期格式，每天一个文件
       compress: false, // 是否压缩旧日志文件
       numBackups: 30, // 保留最近 7 天的日志

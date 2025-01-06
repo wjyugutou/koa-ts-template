@@ -1,5 +1,6 @@
 {
   "name": "sms",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "author": "",
@@ -7,17 +8,18 @@
   "keywords": [],
   "main": "src/app.ts",
   "scripts": {
-    "clear": "ts-node ./src/app.ts",
-    "tsnode": "ts-node --project ./tsconfig.json ./src/app.ts",
-    "dev": "set NODE_ENV=dev&& nodemon",
-    "build": "set NODE_ENV=prod&& nodemon"
+    "dev": "set NODE_ENV=dev&&tsx watch ./src/app.ts",
+    "start-notes": "注释: 部署需要build 运行 start",
+    "start": "set NODE_ENV=prod&&tsx ./src/app.ts",
+    "build": "set NODE_ENV=prod&& tsc"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
     "koa": "^2.15.3",
     "koa-body": "^6.0.1",
     "koa-router": "^13.0.1",
-    "log4js": "^6.9.1"
+    "log4js": "^6.9.1",
+    "pm2": "^5.4.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.12.1",
@@ -25,8 +27,7 @@
     "@types/koa-router": "^7.4.8",
     "@types/node": "^22.10.2",
     "eslint": "^9.17.0",
-    "nodemon": "^3.1.9",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
     "typescript": "^5.7.2"
   }
 }

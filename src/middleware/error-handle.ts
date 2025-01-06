@@ -1,6 +1,6 @@
 import type { Context, Next } from 'koa'
 import process from 'node:process'
-import { logger } from '../log'
+import { logger } from '../log/index.js'
 
 interface CError extends Error {
   status?: number

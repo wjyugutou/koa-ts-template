@@ -2,10 +2,16 @@
   "compilerOptions": {
     // 目标语言版本
     "target": "esnext",
+    "baseUrl": ".",
     // 指定编译目录（要编译哪个目录）
     "rootDir": "./src",
     // 指定生成代码的模板标准
-    "module": "CommonJS",
+    "module": "nodenext",
+    // 指定TypeScript如何从给定的模块说明符中查找文件。
+    "moduleResolution": "nodenext",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     // 严格模式
     "strict": true,
     //  tsc编译后存放目录
@@ -19,12 +25,5 @@
   },
   "include": [
     "src/**/*"
-  ],
-  "ts-node": {
-    "transpileOnly": true,
-    "compilerOptions": {
-      "module": "CommonJS",
-      "esModuleInterop": true
-    }
-  }
+  ]
 }
