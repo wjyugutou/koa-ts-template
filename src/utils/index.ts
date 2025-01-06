@@ -22,7 +22,6 @@ export function getIpAddress() {
 }
 
 // 获取客户端ip地址
-
 export function getClientIpAddress(ctx: Context) {
   const headers = ctx.headers
 
