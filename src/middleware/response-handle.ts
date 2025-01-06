@@ -2,7 +2,6 @@ import type { Context, Next } from 'koa'
 
 async function responseHandle(ctx: Context, next: Next) {
   await next()
-  console.log(ctx.path, ctx.response.get('Content-Type'))
   const contentType = ctx.response.get('Content-Type')
 
   if (ctx.body === undefined) {
