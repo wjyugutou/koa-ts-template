@@ -10,8 +10,8 @@
   "scripts": {
     "dev": "set NODE_ENV=dev&&tsx watch ./src/app.ts",
     "start-notes": "注释: 部署需要build 运行 start",
-    "start": "set NODE_ENV=prod&&node ./src/app.js",
-    "build": "set NODE_ENV=prod&& tsc"
+    "start": "set NODE_ENV=prod&&node ./dist/app.js",
+    "build": "tsc && tsc-alias"
   },
   "dependencies": {
     "dotenv": "^16.4.7",

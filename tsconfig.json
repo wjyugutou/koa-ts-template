@@ -10,7 +10,7 @@
     // 指定TypeScript如何从给定的模块说明符中查找文件。
     "moduleResolution": "nodenext",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["src/*"]
     },
     // 严格模式
     "strict": true,

@@ -7,7 +7,7 @@ import errorHandle from './middleware/error-handle.js'
 import responseHandle from './middleware/response-handle.js'
 import router from './router/index.js'
 import { getIpAddress } from './utils/index.js'
-import './config/index'
+import './config/index.js'
 
 const port = process.env.APP_PORT || 3001
 const app = new Koa()
