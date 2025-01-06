@@ -1,15 +1,20 @@
-import { createReadStream, readFile, readFileSync } from 'node:fs'
+import { readFileSync } from 'node:fs'
 import path from 'node:path'
-import { isTypedArray } from 'node:util/types'
-import { send } from '@koa/send'
 import Router from 'koa-router'
 
 const router = new Router()
 
-router.get('/', async (ctx) => {
-  ctx.body = {
-    content: 'test get success',
-    params: ctx.query,
+router.get(['/:id', '/'], async (ctx) => {
+  const params = ctx.params
+  if (params.id) {
+    ctx.body = {
+      content: `test get success, id: ${params.id}`,
+    }
+  }
+  else {
+    ctx.body = {
+      content: `test get success, id: ${params.id}`,
+    }
   }
 })
 
