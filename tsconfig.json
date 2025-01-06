@@ -15,7 +15,7 @@
     // 严格模式
     "strict": true,
     //  tsc编译后存放目录
-    "outDir": "./dist/src",
+    "outDir": "./dist/",
     // 没有默认导出时, 编译器会创建一个默认导出
     "allowSyntheticDefaultImports": true,
     // 允许export= 导出, 由import from导入
