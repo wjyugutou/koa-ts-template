@@ -3,7 +3,7 @@ import Router from 'koa-router'
 // import openRouter from './open'
 // import privateRouter from './private'
 // import publicRouter from './public'
-import testRouter from './test'
+import testRouter from './test.js'
 
 const router = new Router({
   prefix: '',
