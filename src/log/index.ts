@@ -15,17 +15,36 @@ log4js.configure({
       keepFileExt: true, // 保留文件扩展名
       alwaysIncludePattern: true,
     },
+    debugger: {
+      type: 'dateFile',
+      filename: path.join(getDirname(import.meta.url), './all/debugger.log'),
+      pattern: 'yyyy-MM-dd', // 日期格式，每天一个文件
+      compress: false, // 是否压缩旧日志文件
+      numBackups: 30, // 保留最近 7 天的日志
+      keepFileExt: true, // 保留文件扩展名
+      alwaysIncludePattern: true,
+    },
+    error: {
+      type: 'dateFile',
+      filename: path.join(getDirname(import.meta.url), './all/error.log'),
+      pattern: 'yyyy-MM-dd', // 日期格式，每天一个文件
+      compress: false, // 是否压缩旧日志文件
+      numBackups: 30, // 保留最近 7 天的日志
+      keepFileExt: true, // 保留文件扩展名
+      alwaysIncludePattern: true,
+    },
   },
   // key 用于 logger.getLogger(key)
   categories: {
     default: { appenders: ['everything'], level: 'debug' },
-    // error: { appenders: ['error'], level: 'error' },
-    // info: { appenders: ['info'], level: 'info' },
+    debug: { appenders: ['debugger'], level: 'debug' },
+    error: { appenders: ['error'], level: 'debug' },
   },
 })
 
 export const logger = log4js.getLogger()
-// export const errorLogger = log4js.getLogger('error')
+export const errLogger = log4js.getLogger('error')
+export const debugLogger = log4js.getLogger('debug')
 
 export async function loggerMiddleware(ctx: Koa.Context, next: Koa.Next) {
   // 请求开始时间

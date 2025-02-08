@@ -1,18 +1,12 @@
 import type { Context, Next } from 'koa'
+import { ResponseCode, ResponseMsg } from '@/emuns/index.js'
 
 async function responseHandle(ctx: Context, next: Next) {
   await next()
-  const contentType = ctx.response.get('Content-Type')
-
-  if (ctx.body === undefined) {
-    ctx.throw(404, 'not found')
-  }
-  else if (contentType === 'application/json') {
-    ctx.body = {
-      code: 200,
-      msg: 'success',
-      data: ctx.body,
-    }
+  ctx.body = {
+    code: ResponseCode.SUCCESS,
+    msg: ResponseMsg.SUCCESS,
+    data: ctx.data,
   }
 }
 export default responseHandle
